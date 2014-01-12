@@ -1,0 +1,5 @@
+Boolet teh gaem!
+
+Drawhandler... 
+
+Controller creates thing, 
