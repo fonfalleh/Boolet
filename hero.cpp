@@ -1,33 +1,35 @@
 #include "hero.h"
-#include <SFML/Window.hpp>
 
 Hero::Hero(int x, int y):
-    pX(x), pY(y)
+    GameObject(x,y,5)
 {
 }
-void Hero::move(int x, int y)
-{
-     pX += x;
-     pY += y;
-}
+
 
 void Hero::readInput()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {
-        move(0, -1);
+        GameObject::move(0, -1);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
     {
-        move(0, 1);
+        GameObject::move(0, 1);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
     {
-        move(-1, 0);
+        GameObject::move(-1, 0);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
     {
-        move(1, 0);
+        GameObject::move(1, 0);
     }
-    std::cout<< "pX: " << pX << "\npY: " << pY << std::endl;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+        fire();
+    std::cout << "x: " << this->getX() << "\n y: " << this->getY() << std::endl;
+}
+
+void Hero::fire(){
+    //TODO Check cooldown
+    std::cout << "Pew!\n";
 }

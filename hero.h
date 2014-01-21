@@ -2,16 +2,17 @@
 #define HERO_H
 
 #include <iostream>
+#include <SFML/Window.hpp>
+#include "gameobject.h"
 
-class Hero
+class Hero : public GameObject
 {
 public:
-    Hero(int, int);
+    Hero(int x, int y);
     void move(int, int);
+    void fire();
     void readInput();
 private:
-    int pX;
-    int pY;
 };
 
 #endif // HERO_H

@@ -5,7 +5,10 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     hero.cpp \
-    drawhandler.cpp
+    drawhandler.cpp \
+    bullet.cpp \
+    gameobject.cpp \
+    utils.cpp
 
 LIBS += -L"/home/user/Projects/SFML/lib"
 
@@ -17,4 +20,10 @@ DEPENDPATH += "/home/user/Projects/SFML/include"
 
 HEADERS += \
     hero.h \
-    drawhandler.h
+    drawhandler.h \
+    bullet.h \
+    gameobject.h \
+    utils.h
+
+OTHER_FILES += \
+    some text.txt
