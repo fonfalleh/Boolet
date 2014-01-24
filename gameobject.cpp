@@ -19,6 +19,12 @@ void GameObject::setPos(int x, int y)
     py = y;
 }
 
+void GameObject::setVel(int x, int y)
+{
+    vx = x;
+    vy = y;
+}
+
 
 int GameObject::getX()
 {

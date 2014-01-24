@@ -10,12 +10,17 @@ private:
     int vy;
     int radius;
 public:
+
+    GameObject(int x, int y, int r);
     int getX();
     int getY();
+    int getXV();
+    int getYV();
     int getRadius();
     void setPos(int, int);
+    void setVel(int, int);
+    void updateVel(int, int);
     void move(int, int);
-    GameObject(int x, int y, int r);
 };
 
 #endif // GAMEOBJECT_H

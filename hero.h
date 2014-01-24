@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SFML/Window.hpp>
 #include "gameobject.h"
+#include "bullet.h"
 
 class Hero : public GameObject
 {

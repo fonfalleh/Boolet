@@ -8,16 +8,16 @@
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(800, 600), "BOOLET");
-
-
     // Init
     DrawHandler drawer;
     Hero *hero = new Hero(400, 300);
+    drawer.addGO(hero, 19, 5);
     Bullet *bullet = new Bullet(10, 10);
+    drawer.addGO(bullet, 12, 17);
 
     //Timekeeping
     sf::Clock* timer = new sf::Clock();
-    sf::Time step = sf::seconds(1) / 60.0f; //60 fps
+    sf::Time step = sf::milliseconds(1000) / 60.0f; //60 fps
     sf::Time elapsed;
     while (window.isOpen())
     {
@@ -36,8 +36,6 @@ int main()
 
         //Testing
         hero->readInput();
-        if(Utils::CollideChk(hero, bullet))
-            std::cout<<"Collision!!!"<<std::endl;
         //Testing
         drawer.doStuff(&window);
 

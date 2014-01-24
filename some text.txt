@@ -1,5 +1,5 @@
 Boolet teh gaem!
 
-Drawhandler... 
-
-Controller creates thing, 
+All GameObjects have: coordinates,
+DrawManager wants: sprite(from init), coordinates(GameObject)
+DrawManager has: Texture (to make sprites)

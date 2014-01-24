@@ -26,10 +26,12 @@ void Hero::readInput()
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
         fire();
-    std::cout << "x: " << this->getX() << "\n y: " << this->getY() << std::endl;
+    //std::cout<<"X: " << getX() << " Y: " << getY() << std::endl;
 }
 
 void Hero::fire(){
     //TODO Check cooldown
     std::cout << "Pew!\n";
+    Bullet* bulle = new Bullet(this->getX(), this->getY());
+    bulle->setVel(0, -10);
 }
