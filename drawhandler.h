@@ -1,5 +1,6 @@
 #ifndef DRAWHANDLER_H
 #define DRAWHANDLER_H
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <list>

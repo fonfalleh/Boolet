@@ -29,9 +29,13 @@ void Hero::readInput()
     //std::cout<<"X: " << getX() << " Y: " << getY() << std::endl;
 }
 
+void Hero::update(Scene *)
+{
+}
+
 void Hero::fire(){
     //TODO Check cooldown
-    std::cout << "Pew!\n";
-    Bullet* bulle = new Bullet(this->getX(), this->getY());
-    bulle->setVel(0, -10);
+    //std::cout << "Pew!\n";
+    //Bullet* bulle = new Bullet(this->getX(), this->getY());
+    //bulle->setVel(0, -10);
 }

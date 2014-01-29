@@ -7,9 +7,9 @@ class Bullet : public GameObject
 {
 public:
     Bullet(int, int);
-    void update();
+    virtual ~Bullet();
+    virtual void update(Scene*);
 private:
-    int radius;
 };
 
 #endif // BULLET_H

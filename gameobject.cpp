@@ -1,9 +1,14 @@
 #include "gameobject.h"
+#include "scene.h"
 
 GameObject::GameObject(int x, int y, int r):
     px(x), py(y), radius(r)
 {
 
+}
+
+GameObject::~GameObject()
+{
 }
 
 void GameObject::move(int x, int y)

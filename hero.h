@@ -1,10 +1,8 @@
 #ifndef HERO_H
 #define HERO_H
 
-#include <iostream>
-#include <SFML/Window.hpp>
 #include "gameobject.h"
-#include "bullet.h"
+#include <SFML/Window.hpp>
 
 class Hero : public GameObject
 {
@@ -13,6 +11,7 @@ public:
     void move(int, int);
     void fire();
     void readInput();
+    virtual void update(Scene*);
 private:
 };
 

@@ -1,19 +1,14 @@
-#include <SFML/Graphics.hpp>
-#include "hero.h"
-#include "bullet.h"
 #include "drawhandler.h"
 #include "utils.h"
-
+#include "scene.h"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "BOOLET");
     // Init
+    const int height = 315, width = 420;
+    sf::RenderWindow window(sf::VideoMode(width, height), "BOOLET");
     DrawHandler drawer;
-    Hero *hero = new Hero(400, 300);
-    drawer.addGO(hero, 19, 5);
-    Bullet *bullet = new Bullet(10, 10);
-    drawer.addGO(bullet, 12, 17);
+    Scene scene(width, height, &drawer, &window);
 
     //Timekeeping
     sf::Clock* timer = new sf::Clock();
@@ -34,11 +29,7 @@ int main()
                 window.close();
         }
 
-        //Testing
-        hero->readInput();
-        //Testing
-        drawer.doStuff(&window);
-
+        scene.update();
     }
     return 0;
 }
