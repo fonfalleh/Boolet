@@ -10,7 +10,7 @@ bool Utils::CollideChk(GameObject* a, GameObject* b)
 
     //if points have a distance less than crit, return true
     int dx2 = (a->getX() - b->getX());
-    dx2 *= dx2; //dx^2 //TODO Snyggare/Läsligare?
+    dx2 *= dx2; //dx^2 //TODO De-uglify?
 
     int dy2 = (a->getY() - b->getY());
     dy2 *= dy2;

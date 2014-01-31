@@ -1,7 +1,12 @@
 #include "bullet.h"
 
 Bullet::Bullet(int x, int y):
-    GameObject(x, y, 3)
+    GameObject(x, y, 5)
+{
+}
+
+Bullet::Bullet(int x, int y, int vx, int vy):
+    GameObject(x, y, vx, vy, 5)
 {
 }
 
@@ -12,5 +17,6 @@ Bullet::~Bullet()
 
 void Bullet::update(Scene *)
 {
-    0;
+    //TODO something clever.
+    move();
 }

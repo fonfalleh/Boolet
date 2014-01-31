@@ -7,6 +7,11 @@ GameObject::GameObject(int x, int y, int r):
 
 }
 
+GameObject::GameObject(int x, int y, int vx, int vy, int r):
+    px(x), py(y), vx(vx), vy(vy), radius(r)
+{
+}
+
 GameObject::~GameObject()
 {
 }
@@ -17,6 +22,11 @@ void GameObject::move(int x, int y)
      py += y;
 }
 
+void GameObject::move()
+{
+     px += vx;
+     py += vy;
+}
 
 void GameObject::setPos(int x, int y)
 {

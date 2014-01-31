@@ -5,15 +5,16 @@
 class Scene;
 class GameObject
 {
-private:
+protected:
     int px;
-    int vx;
     int py;
+    int vx;
     int vy;
     int radius;
 
 public:
     GameObject(int x, int y, int r);
+    GameObject(int x, int y, int vx, int vy, int r);
     virtual ~GameObject();
     int getX();
     int getY();
@@ -24,6 +25,7 @@ public:
     void setVel(int, int);
     void updateVel(int, int);
     void move(int, int);
+    void move();
     virtual void update(Scene*) = 0;
 };
 

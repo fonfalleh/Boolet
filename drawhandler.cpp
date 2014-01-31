@@ -14,10 +14,10 @@ void DrawHandler::doStuff(sf::RenderWindow *w)
 {
     w->clear();
     for(std::list<GOS>::iterator it = objects.begin();it != objects.end();it++)
-    { // Oh god why, this is terrible
-        GOS* tGos = &(*it);
-        tGos->s->setPosition(tGos->g->getX(), tGos->g->getY());
-        w->draw(*(tGos->s));
+    { // Oh god why, this is terrible //More was than is, but still.
+        //GOS* tGos = &(*it); //HAVE A LOOK AT THIS GUY, HE'S A "PROGRAMMER" /;_;
+        (*it).s->setPosition((*it).g->getX(), (*it).g->getY()); //TODO Tidy
+        w->draw(*((*it).s));
     }
     //TODO Draw all the things in different layers/lists.
     w->display();

@@ -15,9 +15,11 @@ private:
     sf::RenderWindow* window;
     DrawHandler* drawer;
     Hero *hero;
+    std::list<GameObject*> objs;
 public:
     Scene(int, int, DrawHandler*, sf::RenderWindow*);
     void update();
+    void fireBullet(int, int, int, int);
 };
 
 #endif // SCENE_H

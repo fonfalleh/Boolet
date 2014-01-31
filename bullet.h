@@ -7,6 +7,7 @@ class Bullet : public GameObject
 {
 public:
     Bullet(int, int);
+    Bullet(int, int, int, int);
     virtual ~Bullet();
     virtual void update(Scene*);
 private:

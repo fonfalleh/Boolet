@@ -1,12 +1,13 @@
 #include "hero.h"
-
+#include "scene.h"
 Hero::Hero(int x, int y):
-    GameObject(x,y,5)
+    GameObject(x,y,5), fireCD(fireCDFrames)
 {
 }
+//Hero::~Hero(){0;}
 
 
-void Hero::readInput()
+void Hero::readInput(Scene *s)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {
@@ -25,17 +26,19 @@ void Hero::readInput()
         GameObject::move(1, 0);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-        fire();
+        fire(s);
     //std::cout<<"X: " << getX() << " Y: " << getY() << std::endl;
 }
 
-void Hero::update(Scene *)
+void Hero::update(Scene *s)
 {
+    readInput(s);
+    fireCD.tick();
 }
 
-void Hero::fire(){
-    //TODO Check cooldown
-    //std::cout << "Pew!\n";
-    //Bullet* bulle = new Bullet(this->getX(), this->getY());
-    //bulle->setVel(0, -10);
+void Hero::fire(Scene *s){
+    if(!fireCD.block()){
+        s->fireBullet(px, py, 0, -2);
+        fireCD.restart();
+    }
 }

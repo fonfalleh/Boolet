@@ -7,12 +7,13 @@ int main()
     // Init
     const int height = 315, width = 420;
     sf::RenderWindow window(sf::VideoMode(width, height), "BOOLET");
+    window.setFramerateLimit(200); //TODO Idunnolols
     DrawHandler drawer;
     Scene scene(width, height, &drawer, &window);
 
     //Timekeeping
     sf::Clock* timer = new sf::Clock();
-    sf::Time step = sf::milliseconds(1000) / 60.0f; //60 fps
+    sf::Time step = sf::milliseconds(1000) / 60.0f; //60 fps //Can't quite go below 60? Is drawing capped by hardware?
     sf::Time elapsed;
     while (window.isOpen())
     {

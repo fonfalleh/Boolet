@@ -8,7 +8,9 @@ SOURCES += main.cpp \
     drawhandler.cpp \
     bullet.cpp \
     gameobject.cpp \
-    utils.cpp
+    utils.cpp \
+    scene.cpp \
+    cooldown.cpp
 
 
 CONFIG(release, debug|release): LIBS += -lsfml-audio -lsfml-graphics -lsfml-network -lsfml-window -lsfml-system
@@ -19,4 +21,6 @@ HEADERS += \
     drawhandler.h \
     bullet.h \
     gameobject.h \
-    utils.h
+    utils.h \
+    scene.h \
+    cooldown.h

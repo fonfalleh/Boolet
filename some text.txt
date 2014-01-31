@@ -1,5 +1,9 @@
 Boolet teh gaem!
 
+
+DOING WHILE QUITTING:
+Adding fire mechanic, added some methods in bullet. Use scene to create new bullets from Hero::fire();
+
 All GameObjects have: coordinates,
 DrawManager wants: sprite(from init), coordinates(GameObject)
 DrawManager has: Texture (to make sprites)
