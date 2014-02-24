@@ -10,22 +10,42 @@ Scene::Scene(int width, int height, DrawHandler* dhandler, sf::RenderWindow* win
     drawer->addGO(bullet, 12, 17);
 
     objs.push_back(hero);
+
+    Baddy *baddy = new Baddy(10, 10, 5);
+    drawer->addGO(baddy, 22, 5);
+    objs.push_back(baddy);
+
 }
 
 void Scene::update()
 {
-
-    //hero->readInput();
     //Testing
     for(GOsIT it = objs.begin(); it != objs.end(); ++it) //TODO Iterate instead of increment?
     { // Oh god why, this is terrible
         (*it)->update(this);
     }
     drawer->doStuff(window);
+
+    for(GOsIT it = objs.begin(); it != objs.end(); ++it)
+    {
+        for(GOsIT innit = objs.begin(); innit != objs.end(); ++innit)
+        {
+            if(*it != *innit && Utils::CollideChk(*it, *innit))
+                    std::cout<<"Hello"<<std::endl; //TODO Collisions are checked here.
+        }
+    }
 }
 void Scene::fireBullet(int x, int y, int vx, int vy)
 {
-    Bullet *bullet = new Bullet(x, y, vx, vy);
-    objs.push_back(bullet);
-    drawer->addGO(bullet, 12, 17);
+    Bullet *bullet = 0;
+    if(passiveBullets.empty()){
+        bullet = new Bullet(x, y, vx, vy);
+        objs.push_back(bullet);
+        drawer->addGO(bullet, 12, 17);
+    }
+    else{
+         bullet = passiveBullets.front(); //TODO Stufffffs
+         passiveBullets.pop();
+    }
+
 }

@@ -1,9 +1,11 @@
 Boolet teh gaem!
 
+Did: Very very basic collision detection. Prints "Hello" on object AABB overlap
+Also baddy. Needs implementation, AI, etc.
+  Soon: 
 
-DOING WHILE QUITTING:
-Adding fire mechanic, added some methods in bullet. Use scene to create new bullets from Hero::fire();
+DOING: Object pooling in Scene.fireBullet
 
-All GameObjects have: coordinates,
-DrawManager wants: sprite(from init), coordinates(GameObject)
-DrawManager has: Texture (to make sprites)
+Lists of active/inactive bullets, list of "colliders"
+update lists vs lists or objectcs
+Need GraphicsComponent if sprites are to change.

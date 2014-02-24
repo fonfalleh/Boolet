@@ -10,7 +10,8 @@ SOURCES += main.cpp \
     gameobject.cpp \
     utils.cpp \
     scene.cpp \
-    cooldown.cpp
+    cooldown.cpp \
+    baddy.cpp
 
 
 CONFIG(release, debug|release): LIBS += -lsfml-audio -lsfml-graphics -lsfml-network -lsfml-window -lsfml-system
@@ -23,4 +24,5 @@ HEADERS += \
     gameobject.h \
     utils.h \
     scene.h \
-    cooldown.h
+    cooldown.h \
+    baddy.h

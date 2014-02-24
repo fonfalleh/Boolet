@@ -32,13 +32,13 @@ void Hero::readInput(Scene *s)
 
 void Hero::update(Scene *s)
 {
-    readInput(s);
     fireCD.tick();
+    readInput(s);
 }
 
 void Hero::fire(Scene *s){
     if(!fireCD.block()){
-        s->fireBullet(px, py, 0, -2);
+        s->fireBullet(px, py, 0, -2); //TODO MAGIC
         fireCD.restart();
     }
 }

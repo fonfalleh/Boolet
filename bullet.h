@@ -10,7 +10,10 @@ public:
     Bullet(int, int, int, int);
     virtual ~Bullet();
     virtual void update(Scene*);
+    void deactivate();
+    void recycle(int, int, int, int);
 private:
+    bool active;
 };
 
 #endif // BULLET_H

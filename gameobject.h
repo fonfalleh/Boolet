@@ -13,7 +13,7 @@ protected:
     int radius;
 
 public:
-    GameObject(int x, int y, int r);
+    GameObject(int x, int y, int r); //TODO consistent constructors?
     GameObject(int x, int y, int vx, int vy, int r);
     virtual ~GameObject();
     int getX();
