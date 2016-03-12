@@ -37,7 +37,7 @@ void Scene::update()
     {
         for(GOsIT innit = objs.begin(); innit != objs.end(); ++innit)
         {
-            if(*it != *innit && Utils::CollideChk(*it, *innit))
+            if(*it != *innit && Utils::CollideChk(**it, **innit))
                     std::cout<<"Hello"<<std::endl; //TODO Collisions are checked here.b
         }
     }

@@ -6,7 +6,7 @@
 class Utils
 {
 public:
-    static bool CollideChk(const GameObject&, const GameObject&);
+    static bool CollideChk(GameObject&, GameObject&);
 };
 
 #endif // UTILS_H
