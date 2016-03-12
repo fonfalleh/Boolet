@@ -9,7 +9,7 @@ public:
     Bullet(int, int);
     Bullet(int, int, int, int);
     virtual ~Bullet();
-    virtual void update(Scene*);
+    virtual void update(Scene &);
     void deactivate();
     void recycle(int, int, int, int);
 private:

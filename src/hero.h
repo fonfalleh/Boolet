@@ -13,9 +13,9 @@ private:
 public:
     Hero(int x, int y);
     void move(int, int);
-    void fire(Scene *);
-    void readInput(Scene *);
-    virtual void update(Scene*);
+    void fire(Scene &);
+    void readInput(Scene &);
+    virtual void update(Scene &);
 private:
 };
 

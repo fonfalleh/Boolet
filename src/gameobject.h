@@ -26,7 +26,7 @@ public:
     void updateVel(int, int);
     void move(int, int);
     void move();
-    virtual void update(Scene*) = 0;
+    virtual void update(Scene&) = 0;
 };
 
 #endif // GAMEOBJECT_H

@@ -1,5 +1,8 @@
 #include "scene.h"
+
 typedef std::list<GameObject*>::iterator GOsIT;
+
+
 Scene::Scene(int width, int height, DrawHandler* dhandler, sf::RenderWindow* win)
 {
     window = win; // TODO: IS THIS EVEN SANE? // Eh. Probably; are pointers.
@@ -20,9 +23,13 @@ Scene::Scene(int width, int height, DrawHandler* dhandler, sf::RenderWindow* win
 void Scene::update()
 {
     //Testing
-    for(GOsIT it = objs.begin(); it != objs.end(); ++it) //TODO Iterate instead of increment?
+    /*for(GOsIT it = objs.begin(); it != objs.end(); ++it) //TODO Iterate instead of increment?
     { // Oh god why, this is terrible
         (*it)->update(this);
+    }*/
+    for(auto o : objs)
+    {
+        o->update(*this);
     }
     drawer->doStuff(window);
 
@@ -31,13 +38,13 @@ void Scene::update()
         for(GOsIT innit = objs.begin(); innit != objs.end(); ++innit)
         {
             if(*it != *innit && Utils::CollideChk(*it, *innit))
-                    std::cout<<"Hello"<<std::endl; //TODO Collisions are checked here.
+                    std::cout<<"Hello"<<std::endl; //TODO Collisions are checked here.b
         }
     }
 }
 void Scene::fireBullet(int x, int y, int vx, int vy)
 {
-    Bullet *bullet = 0;
+    Bullet *bullet = nullptr;
     if(passiveBullets.empty()){
         bullet = new Bullet(x, y, vx, vy);
         objs.push_back(bullet);
@@ -47,5 +54,9 @@ void Scene::fireBullet(int x, int y, int vx, int vy)
          bullet = passiveBullets.front(); //TODO Stufffffs
          passiveBullets.pop();
     }
+}
 
+
+void Scene::addObject(GameObject& o){
+    
 }

@@ -5,7 +5,7 @@ Baddy::Baddy(int x, int y, int r):
 {
 }
 
-void Baddy::update(Scene *)
+void Baddy::update(Scene& s)
 {
     //TODO Behaviour
 }

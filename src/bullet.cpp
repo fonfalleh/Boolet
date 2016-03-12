@@ -15,7 +15,7 @@ Bullet::~Bullet()
     0;
 }
 
-void Bullet::update(Scene *)
+void Bullet::update(Scene& s)
 {
     //TODO something clever.
     if(active)

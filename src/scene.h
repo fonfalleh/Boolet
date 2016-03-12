@@ -21,6 +21,7 @@ private:
     std::list<GameObject*> objs;
     std::list<Bullet*> activeBullets;
     std::queue<Bullet*> passiveBullets;
+    void addObject(GameObject& o);
 public:
     Scene(int, int, DrawHandler*, sf::RenderWindow*);
     void update();

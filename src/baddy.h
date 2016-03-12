@@ -6,7 +6,7 @@ class Baddy : public GameObject
 {
 public:
     Baddy(int, int, int);
-    virtual void update(Scene*);
+    virtual void update(Scene&);
 };
 
 #endif // BADDY_H

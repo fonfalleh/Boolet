@@ -4,7 +4,7 @@ DrawHandler::DrawHandler()
 {
     objects.clear();
     scale = 23;
-    if (!texture.loadFromFile("spritesheet.png"))
+    if (!texture.loadFromFile("spritesheet_t.png"))
         std::cout<<"NO SPRITESHEET!"<<std::endl;
     else
         std::cout<<"SPRITESHEET!"<<std::endl;

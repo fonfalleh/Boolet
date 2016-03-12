@@ -1,6 +1,6 @@
 #include "utils.h"
 
-bool Utils::CollideChk(GameObject* a, GameObject* b)
+bool Utils::CollideChk(const GameObject& a, const GameObject& b)
 {
     //All GO's have a hitbox-circle.
     // Have 2 points.

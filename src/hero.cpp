@@ -7,7 +7,7 @@ Hero::Hero(int x, int y):
 //Hero::~Hero(){0;}
 
 
-void Hero::readInput(Scene *s)
+void Hero::readInput(Scene& s)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {
@@ -30,15 +30,15 @@ void Hero::readInput(Scene *s)
     //std::cout<<"X: " << getX() << " Y: " << getY() << std::endl;
 }
 
-void Hero::update(Scene *s)
+void Hero::update(Scene& s)
 {
     fireCD.tick();
     readInput(s);
 }
 
-void Hero::fire(Scene *s){
+void Hero::fire(Scene& s){
     if(!fireCD.block()){
-        s->fireBullet(px, py, 0, -2); //TODO MAGIC
+        s.fireBullet(px, py, 0, -2); //TODO MAGIC
         fireCD.restart();
     }
 }
